@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect } from 'react'
-import confetti from 'canvas-confetti'
+import * as confetti from 'canvas-confetti'
 
 interface VocabCard {
   id: string
