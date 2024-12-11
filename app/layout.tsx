@@ -1,4 +1,10 @@
 import './globals.css'
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Windy Notes',
+  description: 'Application d\'interprétation trilingue avec versets bibliques',
+}
 
 export default function RootLayout({
   children,
@@ -7,13 +13,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="fr">
-      <head>
-        <title>Windy Notes</title>
-        <meta name="description" content="Application d'interprétation trilingue avec versets bibliques" />
-      </head>
-      <body>
-        {children}
-      </body>
+      <body>{children}</body>
     </html>
   )
 }
