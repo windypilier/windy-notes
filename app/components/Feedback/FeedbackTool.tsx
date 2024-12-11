@@ -12,11 +12,17 @@ interface Feedback {
   response?: string
 }
 
+type FeedbackType = 'bug' | 'feature' | 'improvement' | 'other'
+
 export default function FeedbackTool() {
   const [feedbacks, setFeedbacks] = useState<Feedback[]>([])
   const [showForm, setShowForm] = useState(false)
-  const [newFeedback, setNewFeedback] = useState({
-    type: 'improvement' as const,
+  const [newFeedback, setNewFeedback] = useState<{
+    type: FeedbackType;
+    title: string;
+    description: string;
+  }>({
+    type: 'improvement',
     title: '',
     description: ''
   })
@@ -34,13 +40,13 @@ export default function FeedbackTool() {
     setFeedbacks([feedback, ...feedbacks])
     setShowForm(false)
     setNewFeedback({
-      type: 'improvement' as const,
+      type: 'improvement',
       title: '',
       description: ''
     })
   }
 
-  return (  // Ajout du return ici
+  return (
     <div className="space-y-6">
       <button
         onClick={() => setShowForm(true)}
@@ -58,7 +64,7 @@ export default function FeedbackTool() {
                 value={newFeedback.type}
                 onChange={(e) => setNewFeedback({
                   ...newFeedback,
-                  type: e.target.value as Feedback['type']
+                  type: e.target.value as FeedbackType
                 })}
                 className="w-full p-2 rounded border"
               >
