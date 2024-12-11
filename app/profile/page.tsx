@@ -1,4 +1,4 @@
-import ProfileMain from '../components/Profile/ProfileMain'
+import ProfileEditor from '../components/Profile/ProfileEditor'
 import Navigation from '../components/Navigation'
 
 export default function ProfilePage() {
@@ -8,7 +8,7 @@ export default function ProfilePage() {
         <h1 className="text-3xl font-bold text-pink-600 dark:text-pink-400 mb-8">
           Profil
         </h1>
-        <ProfileMain />
+        <ProfileEditor />
       </main>
       <Navigation />
     </div>
